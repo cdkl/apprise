@@ -41,11 +41,11 @@ Gotify, Growl, Guilded, Home Assistant, IFTTT, Join, Kavenegar, KODI, Kumulos,
 LaMetric, Line, MacOSX, Mailgun, Mattermost, Matrix, Microsoft Windows,
 Mastodon, Microsoft Teams, MessageBird, MQTT, MSG91, MyAndroid, Nexmo,
 Nextcloud, NextcloudTalk, Notica, Notifico, ntfy, Office365, OneSignal,
-Opsgenie, PagerDuty, ParsePlatform, PopcornNotify, Prowl, Pushalot, PushBullet,
-Pushjet, Pushover, PushSafer, Reddit, Rocket.Chat, SendGrid, ServerChan, Signal,
-SimplePush, Sinch, Slack, SMSEagle, SMTP2Go, Spontit, SparkPost, Super Toasty,
-Streamlabs, Stride, Syslog, Techulus Push, Telegram, Twilio, Twitter, Twist,
-XBMC, Vonage, Webex Teams}
+Opsgenie, PagerDuty, ParsePlatform, Plivo, PopcornNotify, Prowl, Pushalot,
+PushBullet, Pushjet, Pushover, PushSafer, Reddit, Rocket.Chat, SendGrid,
+ServerChan, Signal, SimplePush, Sinch, Slack, SMSEagle, SMTP2Go, Spontit,
+SparkPost, Super Toasty, Streamlabs, Stride, Syslog, Techulus Push, Telegram,
+Twilio, Twitter, Twist, XBMC, Vonage, Webex Teams}
 
 Name:           python-%{pypi_name}
 Version:        1.2.0
