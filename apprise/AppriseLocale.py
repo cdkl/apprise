@@ -38,9 +38,6 @@ from os.path import dirname
 from os.path import abspath
 from .logger import logger
 
-# Define our translation domain
-DOMAIN = 'apprise'
-LOCALE_DIR = abspath(join(dirname(__file__), 'i18n'))
 
 # This gets toggled to True if we succeed
 GETTEXT_LOADED = False
@@ -64,6 +61,12 @@ class AppriseLocale:
     on the fly if required.
 
     """
+
+    # Define our translation domain
+    _domain = 'apprise'
+
+    # The path to our translations
+    _locale_dir = abspath(join(dirname(__file__), 'i18n'))
 
     # The function to assign `_` by default
     _fn = 'gettext'
@@ -112,14 +115,16 @@ class AppriseLocale:
             # Load our gettext object and install our language
             try:
                 self._gtobjs[lang] = gettext.translation(
-                    DOMAIN, localedir=LOCALE_DIR, languages=[lang])
+                    self._domain, localedir=self._locale_dir, languages=[lang],
+                    fallback=False)
 
                 # The non-intrusive method of applying the gettext change to
                 # the global namespace only
                 self.__fn_map = getattr(self._gtobjs[lang], self._fn)
 
-            except IOError:
+            except IOError as e:
                 # This occurs if we can't access/load our translations
+                logger.debug('IOError: %s' % str(e))
                 return False
 
             logger.trace('Loaded language %s', lang)
